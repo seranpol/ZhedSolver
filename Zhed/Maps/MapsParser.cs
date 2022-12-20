@@ -9,8 +9,7 @@ namespace Zhed.Maps
     internal class MapsParser
     {
         public IBoard Parse(string data)
-        {
-            
+        {            
             var lines = data.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).Reverse().ToArray()!;
             if (lines.GroupBy(s => s.Length).Count() > 1) throw new InvalidOperationException();
 
