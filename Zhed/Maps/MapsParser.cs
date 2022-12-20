@@ -10,7 +10,7 @@ namespace Zhed.Maps
     {
         public IBoard Parse(string data)
         {            
-            var lines = data.Split(new []{ "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries).Reverse().ToArray()!;
+            var lines = data.Split(new []{ "\r\n", "\n", "\t" }, StringSplitOptions.RemoveEmptyEntries).Reverse().ToArray()!;
             if (lines.GroupBy(s => s.Length).Count() > 1) throw new InvalidOperationException();
 
             var builder = Board.CreateBuilder(lines[0].Length, lines.Count());
